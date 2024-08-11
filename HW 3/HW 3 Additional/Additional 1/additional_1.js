@@ -415,19 +415,6 @@ for (let i = 1; i < books.length; i++) {
     }
 }
 console.log(max.title);
-// если книг две и более
-// let max = books[0].title.length;
-// for (let i = 1; i < books.length; i++) {
-//     if (books[i].title.length > max) {
-//         max = books[i].title.length;
-//     }
-// }
-// for (let i = 0; i < books.length; i++) {
-//     if (books[i].title.length === max) {
-//         console.log(books[i].title);
-//     }
-// }
-
 //знайти книжку/ки які писали 2 автори
 let books = [
     {
