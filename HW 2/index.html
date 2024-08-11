@@ -6,9 +6,22 @@
 </head>
 <body>
 <script>
-    let abc = "";
-    if (!abc) {
-        console.log("default");
+    let time = 35;
+    switch (true) {
+        case (time >= 0 && time <= 15):
+            console.log('First quarter of the hour');
+            break;
+        case (time >= 16 && time <= 30):
+            console.log('Second quarter of the hour');
+            break;
+        case (time >= 31 && time <= 45):
+            console.log('Third quarter of the hour');
+            break;
+        case (time >= 46 && time <= 59):
+            console.log('Fourth quarter of the hour');
+            break;
+        default:
+            console.log('Invalid value');
     }
 </script>
 <!--<script src="mainArr.js"></script>-->

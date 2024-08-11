@@ -57,9 +57,7 @@ let products = [
         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
     }
 ];
-
-for (let i = 0; i < products.length; i++) {
-    let product = products[i];
+for (let product of products) {
     document.write(
         `<div class="product-card">
             <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
@@ -67,6 +65,17 @@ for (let i = 0; i < products.length; i++) {
         </div>`
     );
 }
+
+
+// for (let i = 0; i < products.length; i++) {
+//     let product = products[i];
+//     document.write(
+//         `<div class="product-card">
+//             <h3 class="product-title">${product.title}. Price - ${product.price}</h3>
+//             <img src="${product.image}" alt="" class="product-image">
+//         </div>`
+//     );
+// }
 
 
 
