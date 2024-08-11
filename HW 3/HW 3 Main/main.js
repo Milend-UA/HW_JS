@@ -4,7 +4,8 @@ for (let i = 1; i <= 10; i++) {
 }
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
 for (let i = 1; i <= 10; i++) {
-    document.write('<div>Lorem ipsum dolor sit amet ' + i + '</div>');
+    // document.write('<div>Lorem ipsum dolor sit amet ' + i + '</div>');
+    document.write(<div>Lorem ipsum dolor sit amet ${i}</div>);
 }
 // - За допомогою циклу while вивести в документ 20 блоків h1 c довільним текстом всередині.
 let i = 1;
@@ -90,14 +91,14 @@ let users = [
 ];
 console.log("Користувачі зі статусом true:");
 for (let i = 0; i < users.length; i++) {
-    if (users[i].status === true) {
+    if (users[i].status) {
         console.log(users[i].name);
     }
 }
 
 console.log("Користувачі зі статусом false:");
 for (let i = 0; i < users.length; i++) {
-    if (users[i].status === false) {
+    if (!users[i].status) {
         console.log(users[i].name);
     }
 }
