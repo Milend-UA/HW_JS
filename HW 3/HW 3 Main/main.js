@@ -1,8 +1,10 @@
-// За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
+// За допомогою циклу for і document.write()
+// вивести 10 блоків div c довільним текстом всередині
 for (let i = 1; i <= 10; i++) {
     document.write('<div>Lorem ipsum dolor sit amet</div>');
 }
-// - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом і індексом всередині
+// - За допомогою циклу for і document.write()
+// вивести 10 блоків div c довільним текстом і індексом всередині
 for (let i = 1; i <= 10; i++) {
     // document.write('<div>Lorem ipsum dolor sit amet ' + i + '</div>');
     document.write(`<div>Lorem ipsum dolor sit amet ${i}</div>`);
@@ -104,13 +106,14 @@ for (let i = 0; i < users.length; i++) {
         console.log(users[i].name);
     }
 }
-
+console.log("");
 console.log("Користувачі зі статусом false:");
 for (let i = 0; i < users.length; i++) {
     if (!users[i].status) {
         console.log(users[i].name);
     }
 }
+console.log("");
 
 console.log("Користувачі, які старші за 30 років:");
 for (let i = 0; i < users.length; i++) {
