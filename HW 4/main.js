@@ -4,7 +4,7 @@ function square(a, b) {
     if (a > 0 && b > 0) {
         return a * b;
     } else {
-        return 'Sides must be positive.';
+        return 'Sides must be positive!';
     }
 }
 // console.log('Площа прямокутника: ' + square(5, 8));
