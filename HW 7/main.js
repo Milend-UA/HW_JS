@@ -84,3 +84,84 @@ for (const client of sortedProducts) {
     console.log(`Products: ${client.products}`);
     console.log(` `);
 }
+
+//Створити функцію конструктор яка дозволяє створювати об'єкти car,
+//з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна.
+function Car(model, manufacturer, yearOfManufacture, topSpeed, engineCapacity) {
+    this.model = model;
+    this.manufacturer = manufacturer;
+    this.yearOfManufacture = yearOfManufacture;
+    this.topSpeed = topSpeed;
+    this.engineCapacity = engineCapacity;
+    this.driver = {};
+}
+//drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+Car.prototype.drive = function() {
+    console.log(`Їдемо зі швидкістю ${this.topSpeed} на годину`);
+};
+//info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+Car.prototype.info = function() {
+    console.log(`Model - ${this.model}`);
+    console.log(`Manufacturer - ${this.manufacturer}`);
+    console.log(`Year of Manufacture - ${this.yearOfManufacture}`);
+    console.log(`Top Speed - ${this.topSpeed}`);
+    console.log(`Engine Capacity - ${this.engineCapacity}`);
+};
+//increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+Car.prototype.increaseMaxSpeed = function(newSpeed) {
+    this.topSpeed += newSpeed;
+};
+//changeYear (newValue) - змінює рік випуску на значення newValue
+Car.prototype.changeYear = function(newValue) {
+    this.yearOfManufacture = newValue;
+};
+//addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів,
+// і додає його в поточний об'єкт car
+Car.prototype.addDriver = function(driver) {
+    this.driver = driver;
+};
+
+//Створити клас який дозволяє створювати об'єкти car, з властивостями модель,
+// виробник, рік випуску, максимальна швидкість, об'єм двигуна.
+class Car {
+    // Конструктор для инициализации свойств
+    constructor(model, manufacturer, yearOfManufacture, topSpeed, engineCapacity) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.yearOfManufacture = yearOfManufacture;
+        this.topSpeed = topSpeed;
+        this.engineCapacity = engineCapacity;
+        this.driver = {}; // Инициализация пустым объектом
+    }
+
+    // drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+    drive() {
+        console.log(`Їдемо зі швидкістю ${this.topSpeed} на годину`);
+    }
+
+    // info () - яка виводить всю інформацію про автомобіль в форматі `назва поля - значення поля`
+    info() {
+        console.log(`Model - ${this.model}`);
+        console.log(`Manufacturer - ${this.manufacturer}`);
+        console.log(`Year of Manufacture - ${this.yearOfManufacture}`);
+        console.log(`Top Speed - ${this.topSpeed}`);
+        console.log(`Engine Capacity - ${this.engineCapacity}`);
+    }
+
+    //increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
+    increaseMaxSpeed(newSpeed) {
+        this.topSpeed += newSpeed;
+    }
+
+    //changeYear (newValue) - змінює рік випуску на значення newValue
+    changeYear(newValue) {
+        this.yearOfManufacture = newValue;
+    }
+
+    //addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів,
+    // і додає його в поточний об'єкт car
+    addDriver(driver) {
+        this.driver = driver;
+    }
+}
+
