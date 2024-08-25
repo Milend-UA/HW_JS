@@ -228,3 +228,9 @@ Array.prototype.myFilter = function(callback) {
     }
     return filteredArray;
 };
+
+let numbers = [1, 2, 3, 4, 5];
+let evenNumbers = numbers.myFilter(function(element) {
+    return element % 2 === 0;
+});
+console.log(evenNumbers);
