@@ -205,3 +205,26 @@ let findCinderella = arrayOfCinderellas.find(cinderella =>
 if(findCinderella) {
     console.log(`Принц знайшов свою Попелюшку: ${findCinderella.name}`);
 }
+
+//Через Array.prototype. створити власний foreach
+Array.prototype.myForEach = function(callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback(this[i], i, this);
+    }
+};
+let numbers = [1, 2, 3, 4, 5];
+
+numbers.myForEach(function(element, index, array) {
+    console.log(`Элемент: ${element}, Индекс: ${index}, Массив: [${array}]`);
+});
+
+//Через Array.prototype. створити власний filter
+Array.prototype.myFilter = function(callback) {
+    let filteredArray = [];
+    for (let i = 0; i < this.length; i++) {
+        if (callback(this[i], i, this)) {
+            filteredArray.push(this[i]);
+        }
+    }
+    return filteredArray;
+};
