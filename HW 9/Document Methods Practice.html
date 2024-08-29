@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Methods Practice</title>
+</head>
+<body>
+<script>
+    let container = document.createElement('div');
+    container.id = 'container';
+    let heading = document.createElement('h1');
+    heading.className = 'main-heading';
+    heading.textContent = 'Hello, World!';
+    let paragraph = document.createElement('p');
+    paragraph.textContent = 'This is a simple paragraph created with JavaScript.';
+    container.appendChild(heading);
+    container.appendChild(paragraph);
+    document.body.appendChild(container);
+    container.style.border = '1px solid black';
+    container.style.padding = '10px';
+    container.style.marginBottom = '10px';
+</script>
+</body>
+</html>
