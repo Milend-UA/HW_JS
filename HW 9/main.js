@@ -15,7 +15,7 @@ newDiv.style.padding = '20px';
 newDiv.style.border = '1px solid black';
 newDiv.style.marginBottom = '20px';
 
-newDiv.textContent = 'This is a new div';
+newDiv.innerText = 'This is a new div';
 
 document.body.appendChild(newDiv);
 
@@ -28,7 +28,7 @@ let items = ['Main', 'Products', 'About us', 'Contacts'];
 let ul = document.createElement('ul');
 for (let item of items) {
     let li = document.createElement('li');
-    li.textContent = item;
+    li.innerText = item;
     ul.appendChild(li);
 }
 document.body.appendChild(ul);
@@ -62,7 +62,7 @@ for (let course of coursesAndDurationArray) {
     let titleElement = document.createElement('h2');
     titleElement.textContent = course.title; // Устанавливаем текст заголовка
     let durationElement = document.createElement('p');
-    durationElement.textContent = `Duration: ${course.monthDuration} months`;
+    durationElement.innerText = `Duration: ${course.monthDuration} months`;
     courseBlock.appendChild(titleElement);
     courseBlock.appendChild(durationElement);
     container.appendChild(courseBlock);
@@ -102,14 +102,12 @@ for (let course of coursesAndDurationArray) {
 
     let heading = document.createElement('h1');
     heading.className = 'heading';
-    heading.textContent = course.title;
+    heading.innerText = course.title;
 
     let description = document.createElement('p');
     description.className = 'description';
     description.textContent = `Duration: ${course.monthDuration} months`;
 
-    itemDiv.appendChild(heading);
-    itemDiv.appendChild(description);
-
+    itemDiv.append(heading, description);
     container.appendChild(itemDiv);
 }
