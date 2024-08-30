@@ -20,7 +20,11 @@
   let poundsOutput = document.getElementById('poundsOutput');
 
   kgInput.addEventListener('input', function() {
-    poundsOutput.innerText = kgInput.value * 2.20462;
+    if(kgInput.value <= 0){
+      poundsOutput.innerText = 'Please enter a valid number!';
+    } else {
+      poundsOutput.innerText = kgInput.value * 2.20462;
+    }
     //string * number === number я не исправлял эту ошибку
     // Assigned expression type number is not assignable to type string
   });
