@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 2</title>
+</head>
+    <h1>Age Check</h1>
+    <input type="number" id="ageInput" placeholder="Enter your age">
+    <button id="checkButton">Check</button>
+    <p id="message"></p>
+<body>
+<script>
+    //Task 2
+    //створити інпут який приймає вік людини та кнопку яка підтверджує дію.
+    // При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік
+    // чи меньше він ніж 18, та повідомити про це користувача
+    let ageInput = document.getElementById('ageInput');
+    let checkButton = document.getElementById('checkButton');
+    let message = document.getElementById('message');
+
+    checkButton.addEventListener('click', function() {
+        let age = ageInput.value;
+        if (age === '' || age <= 0) {
+            message.innerText = 'Please enter a valid number!';
+            return;
+        }
+        if (age < 18) {
+            message.innerText = 'Too young!';
+        } else {
+            message.innerText = 'You’re definitely 18!';
+        }
+    });
+</script>
+</body>
+</html>

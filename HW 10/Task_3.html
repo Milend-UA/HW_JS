@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+</head>
+<body>
+<form id="myForm">
+    <div class="formGroupInput">
+        <input type="text" id="name" class="formInput" placeholder="Name" style="margin-bottom: 10px;"> <br>
+        <input type="text" id="surname" class="formInput" placeholder="Surname" style="margin-bottom: 10px;"> <br>
+        <input type="number" id="age" class="formInput" placeholder="Age" style="margin-bottom: 10px;"> <br>
+    </div>
+    <button id="button">Submit</button>
+</form>
+<div id="output"></div>
+//Створити форму з трьома полями для name, surname, age та кнопкою.
+// При натисканні на кнопку зчитати дані з полів, та вивести об'єкт в документ.
+// Іншими словами: заповнити форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
+<script>
+    let nameInput = document.getElementById('name');
+    let surnameInput = document.getElementById('surname');
+    let ageInput = document.getElementById('age');
+    let button = document.getElementById('button');
+    let output = document.getElementById('output');
+
+    // Добавить обработчик события на кнопку
+    button.addEventListener('click', function(event) {
+        event.preventDefault(); // Предотвратить отправку формы
+
+        // Считать данные из полей
+        let firstName = nameInput.value;
+        let lastName = surnameInput.value;
+        let userAge = ageInput.value;
+
+        // Проверка на то, что возраст больше 0
+        if (userAge <= 0) {
+            output.innerHTML = "<p style='color: red;'>Age must be greater than 0.</p>";
+            return; // Остановить выполнение, если условие не выполнено
+        }
+
+        // Создать объект с данными
+        const userData = {
+            name: firstName,
+            surname: lastName,
+            age: userAge
+        };
+
+
+        // Показать объект в документе
+        output.innerHTML = `
+                <ul>
+                    <li>Name: ${userData.name}</li>
+                    <li>Surname: ${userData.surname}</li>
+                    <li>Age: ${userData.age}</li>
+                </ul>
+            `;
+    });
+</script>
+</body>
+</html>
+
