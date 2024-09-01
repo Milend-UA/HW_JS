@@ -36,10 +36,10 @@
         table.style.borderSpacing = '0';
 
         for (let i = 0; i < numRows; i++) {
-            const row = document.createElement('tr');
+            let row = document.createElement('tr');
 
             for (let j = 0; j < numCells; j++) {
-                const cell = document.createElement('td');
+                let cell = document.createElement('td');
                 cell.textContent = cellContent;
                 cell.style.border = '1px solid black';
                 cell.style.padding = '8px';
